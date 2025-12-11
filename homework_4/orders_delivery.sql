@@ -20,8 +20,8 @@ CREATE TABLE deliveries (
     order_id        BIGINT NOT NULL,
     courier_id      BIGINT NOT NULL,
     status          VARCHAR(50) NOT NULL,
-    eta             TIMESTAMP,                     -- Estimated Time of Arrival
-    delivered_at    TIMESTAMP,                     -- Фактическое время доставки
+    eta             TIMESTAMP,
+    delivered_at    TIMESTAMP,
     address         TEXT NOT NULL,
     created_at      TIMESTAMP NOT NULL DEFAULT NOW(),
     updated_at      TIMESTAMP NOT NULL DEFAULT NOW(),
@@ -33,3 +33,4 @@ CREATE TABLE deliveries (
     CONSTRAINT fk_deliveries_courier
         FOREIGN KEY (courier_id) REFERENCES couriers(courier_id)
 );
+
